@@ -8,7 +8,5 @@ public class HomePage {
     By correctLogin= By.xpath("//button[@type='button']");
     By product = By.xpath("//a[@href='/product_details/19']");
 
-    public void  ClickProduct(){
-        driver.findElement(product).click();
-    }
+
 }
