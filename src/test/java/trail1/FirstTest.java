@@ -2,15 +2,10 @@ package trail1;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
-
 public class FirstTest {
     WebDriver driver;
 
@@ -31,14 +26,15 @@ public class FirstTest {
     By errorButton = By.className("error-button");
     By headerArea = By.className("app_logo");
     By productLink = By.xpath("//div[text()='"+productName+"']");
-    By prodcutPrice = By.className("inventory_details_price");
+    By productPrice = By.className("inventory_details_price");
     By RemoveButton = By.xpath("//button[text()= 'REMOVE']");
-
-    By cartButton = By.xpath("//button[@class= 'btn_primary btn_inventory']");    String validUsername = "standard_user";
+    By AddToCartNotification = By.xpath("//span[text()= 1]");
+    By cartButton = By.xpath("//button[@class= 'btn_primary btn_inventory']");
+    String validUsername = "standard_user";
     String validPassword = "secret_sauce";
     String expectedPrice = "$15.99";
-    String invalidUsername = "dwadaw";
-    String invalidPassword = "dawdawfr";
+    String invalidUsername = "incorrectUsername";
+    String invalidPassword = "IncorrectPassword";
 
     @Test
     public void validLogin(){
@@ -64,7 +60,7 @@ public class FirstTest {
         driver.findElement(passwordField).sendKeys(validPassword);
         driver.findElement(loginButton).click();
         driver.findElement(productLink).click();
-        String actualValue = driver.findElement(prodcutPrice).getText();
+        String actualValue = driver.findElement(productPrice).getText();
         Assert.assertEquals(actualValue, expectedPrice);
     }
     @Test
@@ -74,6 +70,18 @@ public class FirstTest {
         driver.findElement(loginButton).click();
         driver.findElement(productLink).click();
         driver.findElement(cartButton).click();
-        driver.findElement(RemoveButton).click();
+        boolean assertCart = driver.findElement(AddToCartNotification).isDisplayed();
+        Assert.assertTrue(assertCart);
     }
+    @Test
+    public void RemoveProduct(){
+        driver.findElement(usernameField).sendKeys(validUsername);
+        driver.findElement(passwordField).sendKeys(validPassword);
+        driver.findElement(loginButton).click();
+        driver.findElement(productLink).click();
+        driver.findElement(cartButton).click();
+        driver.findElement(RemoveButton).click();
+        boolean RemoveAssert = driver.findElement(cartButton).isDisplayed();
+        Assert.assertTrue(RemoveAssert);
+}
 }

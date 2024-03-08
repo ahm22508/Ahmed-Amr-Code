@@ -9,6 +9,7 @@ public class CartPage {
     By ContinueShoppingButton= By.xpath("//a[text()='Continue Shopping']");
     By CheckoutButton= By.xpath("//a[text()= 'CHECKOUT']");
 
+
     public void  Remove(){
         driver.findElement(RemoveButton).click();
 
