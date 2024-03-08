@@ -21,4 +21,6 @@ public class CartPage {
         driver.findElement(CheckoutButton).click();
 
     }
+
+
 }

@@ -25,5 +25,12 @@ public class ProductPage {
         driver.findElement(RemoveButton).click();
     }
 
+    public void CartFunctionalityValidation(){
+        driver.findElement(cartButton).click();
+        driver.findElement(RemoveButton).click();
+    }
+
+
+
 
 }
