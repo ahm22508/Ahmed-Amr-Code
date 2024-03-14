@@ -5,10 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     WebDriver driver;
+    public LoginPage(WebDriver driver){
+        this.driver =driver;
+    }
     By usernameField= By.id("user-name");
     By passwordField=By.id("password");
     By login=By.id("login-button");
-    By error=By.className("error-button");
+    public By error=By.className("error-button");
     public void Login(String username, String password) {
         driver.findElement(usernameField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);

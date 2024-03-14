@@ -9,7 +9,7 @@ public class HomePage {
 
     By link = By.xpath("//div[text()=\""+productName+"\"]");
 
-    By header= By.id("header_container");
+    public By header= By.id("header_container");
 
     public  void  OpenProduct(){
 

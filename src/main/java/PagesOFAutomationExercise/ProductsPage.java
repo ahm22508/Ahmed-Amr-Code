@@ -17,7 +17,6 @@ public class ProductsPage {
     }
     public void AddToCart(){
         driver.findElement(Cart).click();
-
     }
     public void ToShopping(){
         driver.findElement(Shopping).click();
