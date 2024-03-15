@@ -11,10 +11,10 @@ import java.time.Duration;
 
 public class LoginTests extends BasePage{
 
-               String validUsername = "Admin";
-               String validPassword = "admin123";
-               String invalidUsername = "dwadaw";
-               String invalidPassword = "dawdawfr";
+    String validUsername = "Admin";
+    String validPassword = "admin123";
+    String invalidUsername = "dwadaw";
+    String invalidPassword = "dawdawfr";
 
     @Test
     public void ValidLoegin(){
@@ -22,7 +22,7 @@ public class LoginTests extends BasePage{
         WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(5));
         waits.until(ExpectedConditions.visibilityOfElementLocated(Login.UsernameField));
         Login.Login(validUsername, validPassword);
-        HomePage homepage = new HomePage();
+        HomePage homepage = new HomePage(driver);
         waits.until(ExpectedConditions.visibilityOfElementLocated(homepage.CorrectLoginAssert));
         Boolean AssertLoginCorrect = driver.findElement(homepage.CorrectLoginAssert).isDisplayed();
         Assert.assertTrue(AssertLoginCorrect);

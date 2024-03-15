@@ -7,7 +7,7 @@ public class BaseTest {
 
 
 
-        WebDriver driver;
+       public WebDriver driver;
 
         @BeforeMethod
         public void setup() {

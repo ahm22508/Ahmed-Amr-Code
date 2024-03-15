@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class princpleTest {
 
-    WebDriver driver;
+ public WebDriver driver;
     @BeforeMethod
     public  void  Driver(){
         driver = new ChromeDriver();
