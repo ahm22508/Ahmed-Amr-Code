@@ -5,8 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class CartPage {
     WebDriver driver;
+    public CartPage(WebDriver driver){
+        this.driver =driver;
+
+    }
     By RemoveButton = By.xpath("//button[text()= 'REMOVE']");
-    By ContinueShoppingButton= By.xpath("//a[text()='Continue Shopping']");
+   public By ContinueShoppingButton= By.xpath("//a[text()='Continue Shopping']");
     By CheckoutButton= By.xpath("//a[text()= 'CHECKOUT']");
 
 

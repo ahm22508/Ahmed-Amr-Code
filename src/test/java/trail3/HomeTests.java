@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class HomeTests extends BasePage{
+public class HomeTests extends Base {
     String validUsername = "Admin";
     String validPassword = "admin123";
     @Test

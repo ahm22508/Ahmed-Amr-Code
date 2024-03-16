@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
         public void validLogin(){
             LoginPage login = new LoginPage(driver);
             login.Login(validUsername , validPassword);
-            HomePage home = new HomePage();
+            HomePage home = new HomePage(driver);
             boolean isHeaderDisplayed = driver.findElement(home.header).isDisplayed();
             Assert.assertTrue(isHeaderDisplayed);
         }
