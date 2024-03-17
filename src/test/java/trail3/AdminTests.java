@@ -29,7 +29,7 @@ public class AdminTests extends Base {
         wait.until(ExpectedConditions.visibilityOfElementLocated(admin.SearchArea));
         admin.SearchAdminName(AdminName);
         wait.until(ExpectedConditions.visibilityOfElementLocated(admin.AdminName));
-        Boolean AssertFunctionalitySearch= driver.findElement(admin.AdminName).isDisplayed();
+        boolean AssertFunctionalitySearch= driver.findElement(admin.AdminName).isDisplayed();
         Assert.assertTrue(AssertFunctionalitySearch);
     }
 }

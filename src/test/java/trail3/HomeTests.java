@@ -24,7 +24,7 @@ public class HomeTests extends Base {
         home.NavigateAdminButton();
         AdminPage admin = new AdminPage(driver);
         wait.until(ExpectedConditions.visibilityOfElementLocated(admin.AssertToAdminPage));
-        Boolean AssertNavigation = driver.findElement(admin.AssertToAdminPage).isDisplayed();
+        boolean AssertNavigation = driver.findElement(admin.AssertToAdminPage).isDisplayed();
         Assert.assertTrue(AssertNavigation);
 
     }
