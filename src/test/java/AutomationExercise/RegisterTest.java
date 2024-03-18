@@ -1,4 +1,4 @@
-package trail2;
+package AutomationExercise;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;

@@ -1,10 +1,9 @@
-package trail1;
+package SwagLabs;
 
 import PagesOfSwagLabs.CartPage;
 import PagesOfSwagLabs.HomePage;
 import PagesOfSwagLabs.LoginPage;
 import PagesOfSwagLabs.ProductPage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
