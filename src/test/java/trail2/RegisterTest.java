@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterTest extends princpleTest{
+public class RegisterTest extends Base {
     By MR= By.id("id_gender1");
     By pass=By.id("password");
     By day=By.id("days");

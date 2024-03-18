@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.time.Duration;
 
-public class LoginTests extends princpleTest{
+public class LoginTests extends Base {
 
     By Email = By.xpath("//input[@data-qa='login-email']");
     By password = By.name("password");
