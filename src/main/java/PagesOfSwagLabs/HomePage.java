@@ -4,15 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
-    WebDriver driver;
+  private WebDriver driver;
     public HomePage(WebDriver driver){
         this.driver = driver;
     }
     String productName = "Sauce Labs Fleece Jacket";
 
-   public By link = By.xpath("//div[text()=\""+productName+"\"]");
+   private By link = By.xpath("//div[text()=\""+productName+"\"]");
 
-    public By header= By.id("header_container");
+    private By header= By.id("header_container");
+
+    public By GetLink(){
+        return link;
+    }
+    public By GetHeader(){
+        return header;
+    }
 
     public void OpenProduct(){
 

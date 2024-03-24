@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
             LoginPage login = new LoginPage(driver);
             login.Login(validUsername , validPassword);
             HomePage home = new HomePage(driver);
-            boolean isHeaderDisplayed = driver.findElement(home.header).isDisplayed();
+            boolean isHeaderDisplayed = driver.findElement(home.GetHeader()).isDisplayed();
             Assert.assertTrue(isHeaderDisplayed);
         }
 
@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
         public void invalidLogin(){
             LoginPage login = new LoginPage(driver);
             login.Login(invalidUsername, invalidPassword);
-            boolean isErrorDisplayed = driver.findElement(login.error).isDisplayed();
+            boolean isErrorDisplayed = driver.findElement(login.getErrorButton()).isDisplayed();
             Assert.assertTrue(isErrorDisplayed);
         }
 
