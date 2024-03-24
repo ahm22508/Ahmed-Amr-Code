@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class OverViewPage {
-  private   WebDriver driver;
+  private final WebDriver driver;
     public OverViewPage(WebDriver driver){
         this.driver = driver;
     }
@@ -13,5 +13,4 @@ public class OverViewPage {
     public void ClickToFinishButton(){
         driver.findElement(FinishButton).click();
     }
-
 }

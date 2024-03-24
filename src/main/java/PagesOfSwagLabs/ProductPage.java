@@ -8,11 +8,11 @@ public class ProductPage {
     public ProductPage(WebDriver driver){
         this.driver = driver;
     }
-    private    By price = By.className("inventory_details_price");
-    private By cartButton = By.xpath("//button[@class= 'btn_primary btn_inventory']");
-    private By addedCart= By.xpath("//*[@role='img']");
-    private By backButton= By.xpath("//button[text()= '<- Back']");
-    private By RemoveButton = By.xpath("//button[text()= 'REMOVE']");
+    private final By price = By.className("inventory_details_price");
+    private final By cartButton = By.xpath("//button[@class= 'btn_primary btn_inventory']");
+    private final By addedCart= By.xpath("//*[@role='img']");
+    private final By backButton= By.xpath("//button[text()= '<- Back']");
+    private final By RemoveButton = By.xpath("//button[text()= 'REMOVE']");
 
     public By GetPrice(){
         return price;
@@ -25,7 +25,6 @@ public class ProductPage {
     }
 
 
-
     public void AddToCart(){
         driver.findElement(cartButton).click();
     }
@@ -35,7 +34,6 @@ public class ProductPage {
     public void Back(){
         driver.findElement(backButton).click();
     }
-
     public void Remove(){
         driver.findElement(RemoveButton).click();
     }
@@ -44,8 +42,4 @@ public class ProductPage {
         driver.findElement(cartButton).click();
         driver.findElement(RemoveButton).click();
     }
-
-
-
-
 }

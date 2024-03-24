@@ -15,9 +15,9 @@ public class BaseTest {
             driver.navigate().to("https://www.saucedemo.com/v1/index.html");
         }
 
-//        @AfterMethod
-//        public void End(){
-//            driver.quit();
-//        }
+        @AfterMethod
+        public void End(){
+            driver.quit();
+        }
     }
 

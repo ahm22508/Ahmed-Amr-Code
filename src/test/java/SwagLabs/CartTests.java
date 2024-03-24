@@ -20,7 +20,7 @@ public class CartTests extends BaseTest{
         CartPage cart = new CartPage(driver);
         CheckOutPage check = new CheckOutPage(driver);
         OverViewPage overview = new OverViewPage(driver);
-        FinishPage finish = new FinishPage(driver);
+        FinishPage finish = new FinishPage();
         login.Login(validUsername, validPassword);
         home.OpenProduct();
         product.AddToCart();
@@ -30,7 +30,5 @@ public class CartTests extends BaseTest{
         overview.ClickToFinishButton();
         boolean AssertMainFunction= driver.findElement(finish.GetFinish()).isDisplayed();
         Assert.assertTrue(AssertMainFunction);
-
-
     }
 }

@@ -33,7 +33,5 @@ import org.testng.annotations.Test;
             boolean isErrorDisplayed = driver.findElement(login.getErrorButton()).isDisplayed();
             Assert.assertTrue(isErrorDisplayed);
         }
-
-
     }
 

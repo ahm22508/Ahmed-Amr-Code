@@ -74,5 +74,4 @@ public class ProductTests extends BaseTest {
         boolean AssertRemove = driver.findElement(product.GetCartButton()).isDisplayed();
         Assert.assertTrue(AssertRemove);
     }
-
 }
