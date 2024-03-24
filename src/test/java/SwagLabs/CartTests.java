@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 public class CartTests extends BaseTest{
     String validUsername = "standard_user";
     String validPassword = "secret_sauce";
+    String FirstName = "Ahmed";
+    String LastName = "Amr";
+    String PotalCode = "55839";
 
     @Test
     public void CheckOutFunction(){
@@ -23,7 +26,7 @@ public class CartTests extends BaseTest{
         product.AddToCart();
         product.ClicktoCart();
         cart.Checkout();
-        check.ClickToContinue();
+        check.ClickToContinue(FirstName, LastName, PotalCode);
         overview.ClickToFinishButton();
         boolean AssertMainFunction= driver.findElement(finish.GetFinish()).isDisplayed();
         Assert.assertTrue(AssertMainFunction);

@@ -14,14 +14,10 @@ public class CheckOutPage {
    private By PostalCodeField = By.id("postal-code");
    private  By ContinueButton = By.xpath("//input[@type='submit']");
 
-   public void ClickToContinue(){
-       driver.findElement(FirstNameField).sendKeys("Ahmed");
-       driver.findElement(LastNameField).sendKeys("Amr");
-       driver.findElement(PostalCodeField).sendKeys("4i495");
+   public void ClickToContinue(String FirstName, String LastName, String PostalCode){
+       driver.findElement(FirstNameField).sendKeys(FirstName);
+       driver.findElement(LastNameField).sendKeys(LastName);
+       driver.findElement(PostalCodeField).sendKeys(PostalCode);
        driver.findElement(ContinueButton).click();
    }
-
-
-
-
 }
