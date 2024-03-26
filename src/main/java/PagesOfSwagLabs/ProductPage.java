@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ProductPage {
-   private WebDriver driver;
+   private final WebDriver driver;
     public ProductPage(WebDriver driver){
         this.driver = driver;
     }
@@ -28,7 +28,7 @@ public class ProductPage {
     public void AddToCart(){
         driver.findElement(cartButton).click();
     }
-    public void ClicktoCart(){
+    public void ClickToCart(){
         driver.findElement(addedCart).click();
     }
     public void Back(){

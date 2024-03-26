@@ -9,7 +9,7 @@ public class CartTests extends BaseTest{
     String validPassword = "secret_sauce";
     String FirstName = "Ahmed";
     String LastName = "Amr";
-    String PotalCode = "55839";
+    String PostalCode = "55839";
 
     @Test
     public void CheckOutFunction(){
@@ -23,9 +23,9 @@ public class CartTests extends BaseTest{
         login.Login(validUsername, validPassword);
         home.OpenProduct();
         product.AddToCart();
-        product.ClicktoCart();
+        product.ClickToCart();
         cart.Checkout();
-        checkout.ClickToContinue(FirstName, LastName, PotalCode);
+        checkout.ClickToContinue(FirstName, LastName, PostalCode);
         overview.ClickToFinishButton();
         boolean AssertMainFunction= driver.findElement(finish.GetFinish()).isDisplayed();
         Assert.assertTrue(AssertMainFunction);
