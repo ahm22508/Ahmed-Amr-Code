@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 
         String validUsername = "standard_user";
         String validPassword = "secret_sauce";
-        String invalidUsername = "dwadaw";
-        String invalidPassword = "dawdawfr";
+        String invalidUsername = "InvalidUsername";
+        String invalidPassword = "InvalidPassword";
 
         @Test
         public void validLogin(){
