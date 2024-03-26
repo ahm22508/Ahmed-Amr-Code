@@ -8,10 +8,6 @@ import org.testng.annotations.Test;
 
     public class LoginTests extends BaseTest {
 
-
-
-
-
         String validUsername = "standard_user";
         String validPassword = "secret_sauce";
         String invalidUsername = "dwadaw";
@@ -20,8 +16,8 @@ import org.testng.annotations.Test;
         @Test
         public void validLogin(){
             LoginPage login = new LoginPage(driver);
-            login.Login(validUsername , validPassword);
             HomePage home = new HomePage(driver);
+            login.Login(validUsername , validPassword);
             boolean isHeaderDisplayed = driver.findElement(home.GetHeader()).isDisplayed();
             Assert.assertTrue(isHeaderDisplayed);
         }
