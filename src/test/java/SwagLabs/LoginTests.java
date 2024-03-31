@@ -10,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -40,17 +39,9 @@ public class LoginTests extends BaseTest {
                     case BOOLEAN:
                         ArrayFile[r][c] = cell.getBooleanCellValue();
                         break;
-
-
                 }
             }
         }
-
-
-
-
-
-
 
 return ArrayFile;
     }
@@ -62,8 +53,6 @@ return ArrayFile;
         boolean AssertLogin = driver.findElement(home.GetHeader()).isDisplayed();
         Assert.assertTrue(AssertLogin);
     }
-
-
     }
 
 
