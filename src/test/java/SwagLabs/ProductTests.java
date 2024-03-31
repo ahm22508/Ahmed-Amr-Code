@@ -45,7 +45,7 @@ public class ProductTests extends BaseTest {
         home.OpenProduct();
         ProductPage product = new ProductPage(driver);
         product.AddToCart();
-        product.ClicktoCart();
+        product.ClickToCart();
         CartPage cart = new CartPage(driver);
         boolean AssertAdding = driver.findElement(cart.GetContinueShoppingButton()).isDisplayed();
         Assert.assertTrue(AssertAdding);

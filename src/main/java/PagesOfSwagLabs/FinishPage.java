@@ -8,5 +8,5 @@ public class FinishPage {
 
     public By GetFinish(){
         return Finish;
-    }
+        }
 }
