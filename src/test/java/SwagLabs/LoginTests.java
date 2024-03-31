@@ -42,7 +42,6 @@ public class LoginTests extends BaseTest {
                 }
             }
         }
-
 return ArrayFile;
     }
     @Test(dataProvider = "LoginTestCase")
