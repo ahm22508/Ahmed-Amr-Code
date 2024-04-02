@@ -8,22 +8,19 @@ public class HomePage {
     public HomePage(WebDriver driver){
         this.driver = driver;
     }
-    String productName = "Sauce Labs Fleece Jacket";
-
-   private final By link = By.xpath("//div[text()=\""+productName+"\"]");
 
     private final By header= By.id("header_container");
 
-    public By GetLink(){
-        return link;
+    public static By GetLink(String productName){
+        return By.xpath("//div[text()=\""+productName+"\"]");
     }
     public By GetHeader(){
         return header;
     }
 
-    public ProductPage OpenProduct(){
+    public ProductPage OpenProduct(String ProductName){
 
-        driver.findElement(link).click();
+        driver.findElement(By.xpath("//div[text()=\""+ProductName+"\"]")).click();
   return new ProductPage(driver);
     }
 }

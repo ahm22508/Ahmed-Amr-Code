@@ -10,12 +10,13 @@ public class CartTests extends BaseTest{
     String FirstName = "Ahmed";
     String LastName = "Amr";
     String PostalCode = "55839";
+    String ProductName= "Sauce Labs Fleece Jacket";
 
     //Fluent Test Case Design.
     @Test
     public void CheckOutFunction(){
         new LoginPage(driver).Login(validUsername, validPassword).
-                OpenProduct().
+                OpenProduct(ProductName).
                 AddProductToCart()
                 .ClickToCartImage()
                 .ClickOnCheckoutButton().

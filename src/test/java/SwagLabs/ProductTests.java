@@ -13,10 +13,11 @@ public class ProductTests extends BaseTest {
     String validUsername = "standard_user";
     String validPassword = "secret_sauce";
     String expectedPrice = "$49.99";
+    String ProductName= "Sauce Labs Fleece Jacket";
 
     @Test
     public void validateProductPrice() {
-        new LoginPage(driver).Login(validUsername, validPassword).OpenProduct();
+        new LoginPage(driver).Login(validUsername, validPassword).OpenProduct(ProductName);
         String ValidatePrice = driver.findElement(ProductPage.GetPrice()).getText();
         Assert.assertEquals(expectedPrice, ValidatePrice);
     }
@@ -26,7 +27,7 @@ public class ProductTests extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.Login(validUsername, validPassword);
         HomePage home = new HomePage(driver);
-        home.OpenProduct();
+        home.OpenProduct(ProductName);
         ProductPage product = new ProductPage(driver);
         product.AddProductToCart();
         boolean AssertFunction = driver.findElement(product.GetRemoveButton()).isDisplayed();
@@ -38,7 +39,7 @@ public class ProductTests extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.Login(validUsername, validPassword);
         HomePage home = new HomePage(driver);
-        home.OpenProduct();
+        home.OpenProduct(ProductName);
         ProductPage product = new ProductPage(driver);
         product.AddProductToCart();
         product.ClickToCartImage();
@@ -52,10 +53,10 @@ public class ProductTests extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.Login(validUsername, validPassword);
         HomePage home = new HomePage(driver);
-        home.OpenProduct();
+        home.OpenProduct(ProductName);
         ProductPage product = new ProductPage(driver);
         product.Back();
-        boolean BackAssert = driver.findElement(home.GetLink()).isDisplayed();
+        boolean BackAssert = driver.findElement(HomePage.GetLink(ProductName)).isDisplayed();
         Assert.assertTrue(BackAssert);
     }
     @Test
@@ -63,7 +64,7 @@ public class ProductTests extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.Login(validUsername, validPassword);
         HomePage home = new HomePage(driver);
-        home.OpenProduct();
+        home.OpenProduct(ProductName);
         ProductPage product = new ProductPage(driver);
         product.AddProductToCart();
         product.Remove();
