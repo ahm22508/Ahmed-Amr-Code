@@ -23,8 +23,9 @@ public class CartPage {
         return ContinueShoppingButton;
     }
 
-    public void  Checkout(){
+    public CheckOutPage ClickOnCheckoutButton(){
         driver.findElement(CheckoutButton).click();
+        return new CheckOutPage(driver);
     }
 }
 

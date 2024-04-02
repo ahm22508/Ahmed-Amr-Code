@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 
 
 public class FinishPage {
-    private final By Finish = By.xpath("//h2[text()='THANK YOU FOR YOUR ORDER']");
+    private static final By Finish = By.xpath("//h2[text()='THANK YOU FOR YOUR ORDER']");
 
-    public By GetFinish(){
+    public static By GetFinish(){
         return Finish;
         }
 }

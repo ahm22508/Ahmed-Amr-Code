@@ -14,10 +14,12 @@ public class CheckOutPage {
    private final By PostalCodeField = By.id("postal-code");
    private  final By ContinueButton = By.xpath("//input[@type='submit']");
 
-   public void ClickToContinue(String FirstName, String LastName, String PostalCode){
+   public OverViewPage ClickToContinueButton(String FirstName, String LastName, String PostalCode){
        driver.findElement(FirstNameField).sendKeys(FirstName);
        driver.findElement(LastNameField).sendKeys(LastName);
        driver.findElement(PostalCodeField).sendKeys(PostalCode);
        driver.findElement(ContinueButton).click();
+       return new OverViewPage(driver);
+
    }
 }

@@ -11,23 +11,17 @@ public class CartTests extends BaseTest{
     String LastName = "Amr";
     String PostalCode = "55839";
 
+    //Fluent Test Case Design.
     @Test
     public void CheckOutFunction(){
-        LoginPage login =new LoginPage(driver);
-        HomePage home = new HomePage(driver);
-        ProductPage product = new ProductPage(driver);
-        CartPage cart = new CartPage(driver);
-        CheckOutPage checkout = new CheckOutPage(driver);
-        OverViewPage overview = new OverViewPage(driver);
-        FinishPage finish = new FinishPage();
-        login.Login(validUsername, validPassword);
-        home.OpenProduct();
-        product.AddToCart();
-        product.ClickToCart();
-        cart.Checkout();
-        checkout.ClickToContinue(FirstName, LastName, PostalCode);
-        overview.ClickToFinishButton();
-        boolean AssertMainFunction= driver.findElement(finish.GetFinish()).isDisplayed();
+        new LoginPage(driver).Login(validUsername, validPassword).
+                OpenProduct().
+                AddProductToCart()
+                .ClickToCartImage()
+                .ClickOnCheckoutButton().
+                ClickToContinueButton(FirstName, LastName, PostalCode).
+                ClickToFinishButton();
+        boolean AssertMainFunction= driver.findElement(FinishPage.GetFinish()).isDisplayed();
         Assert.assertTrue(AssertMainFunction);
     }
 }

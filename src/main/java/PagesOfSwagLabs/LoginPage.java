@@ -16,9 +16,11 @@ public class LoginPage {
    public By GetErrorButtton(){
        return error;
    }
-    public void Login(String username, String password) {
+    public HomePage Login(String username, String password) {
         driver.findElement(usernameField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(login).click();
+
+        return new HomePage(driver);
     }
 }

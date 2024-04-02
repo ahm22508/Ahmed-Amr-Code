@@ -16,12 +16,8 @@ public class ProductTests extends BaseTest {
 
     @Test
     public void validateProductPrice() {
-        LoginPage login = new LoginPage(driver);
-        login.Login(validUsername, validPassword);
-        HomePage home = new HomePage(driver);
-        home.OpenProduct();
-        ProductPage product = new ProductPage(driver);
-        String ValidatePrice = driver.findElement(product.GetPrice()).getText();
+        new LoginPage(driver).Login(validUsername, validPassword).OpenProduct();
+        String ValidatePrice = driver.findElement(ProductPage.GetPrice()).getText();
         Assert.assertEquals(expectedPrice, ValidatePrice);
     }
 
@@ -32,7 +28,7 @@ public class ProductTests extends BaseTest {
         HomePage home = new HomePage(driver);
         home.OpenProduct();
         ProductPage product = new ProductPage(driver);
-        product.AddToCart();
+        product.AddProductToCart();
         boolean AssertFunction = driver.findElement(product.GetRemoveButton()).isDisplayed();
         Assert.assertTrue(AssertFunction);
     }
@@ -44,8 +40,8 @@ public class ProductTests extends BaseTest {
         HomePage home = new HomePage(driver);
         home.OpenProduct();
         ProductPage product = new ProductPage(driver);
-        product.AddToCart();
-        product.ClickToCart();
+        product.AddProductToCart();
+        product.ClickToCartImage();
         CartPage cart = new CartPage(driver);
         boolean AssertAdding = driver.findElement(cart.GetContinueShoppingButton()).isDisplayed();
         Assert.assertTrue(AssertAdding);
@@ -69,7 +65,7 @@ public class ProductTests extends BaseTest {
         HomePage home = new HomePage(driver);
         home.OpenProduct();
         ProductPage product = new ProductPage(driver);
-        product.AddToCart();
+        product.AddProductToCart();
         product.Remove();
         boolean AssertRemove = driver.findElement(product.GetCartButton()).isDisplayed();
         Assert.assertTrue(AssertRemove);

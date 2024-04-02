@@ -21,9 +21,10 @@ public class HomePage {
         return header;
     }
 
-    public void OpenProduct(){
+    public ProductPage OpenProduct(){
 
         driver.findElement(link).click();
+  return new ProductPage(driver);
     }
 }
 
