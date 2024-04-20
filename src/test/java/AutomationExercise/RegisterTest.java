@@ -30,7 +30,7 @@ public class RegisterTest extends Base {
 @Test
     public void Register(){
         driver.findElement(username).sendKeys("Ahmad Amr");
-        driver.findElement(email).sendKeys("ahmadamr659@gmail.com");
+        driver.findElement(email).sendKeys("ahmadamr679@gmail.com");
         driver.findElement(register).click();
         driver.findElement(MR).click();
         driver.findElement(pass).sendKeys("aamrfou55");

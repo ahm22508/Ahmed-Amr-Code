@@ -15,14 +15,14 @@ public class CartTests extends BaseTest{
     //Fluent Test Case Design.
     @Test
     public void CheckOutFunction(){
-        new LoginPage(driver).Login(validUsername, validPassword).
-                OpenProduct(ProductName).
-                AddProductToCart()
-                .ClickToCartImage()
-                .ClickOnCheckoutButton().
+        new LoginPage(driver).Login(validUsername,validPassword).
+                OpenProduct(ProductName)
+                .AddProductToCart().
+                ClickToCartImage().
+                ClickOnCheckoutButton().
                 ClickToContinueButton(FirstName, LastName, PostalCode).
                 ClickToFinishButton();
-        boolean AssertMainFunction= driver.findElement(FinishPage.GetFinish()).isDisplayed();
-        Assert.assertTrue(AssertMainFunction);
+        boolean AssertFunction = driver.findElement(FinishPage.GetFinish()).isDisplayed();
+        Assert.assertTrue(AssertFunction);
     }
 }

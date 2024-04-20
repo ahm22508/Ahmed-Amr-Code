@@ -18,10 +18,10 @@ public class HomePage {
         return header;
     }
 
-    public ProductPage OpenProduct(String ProductName){
+    public  ProductPage OpenProduct(String ProductName){
 
         driver.findElement(By.xpath("//div[text()=\""+ProductName+"\"]")).click();
-  return new ProductPage(driver);
+   return new ProductPage(driver);
     }
 }
 

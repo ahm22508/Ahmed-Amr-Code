@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 
 public class LoginTests extends BaseTest {
 @Test(dataProvider = "Login")
