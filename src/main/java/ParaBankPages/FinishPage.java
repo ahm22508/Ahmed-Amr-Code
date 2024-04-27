@@ -19,4 +19,5 @@ public class FinishPage {
     public static By LoanRequestApproved(){
         return By.xpath("//td[text()='Approved']");
     }
+    public static By UpdatePageError(){return By.xpath("//span[text()='First name is required.']");}
 }

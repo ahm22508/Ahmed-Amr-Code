@@ -3,20 +3,23 @@ package ParaBankTests;
 import ParaBankPages.HomePage;
 import ParaBankPages.LoginPage;
 import ParaBankPages.RegisterPage;
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class RegisterAndLoginTests extends Base {
-    String FirstName = "Ahmed";
-    String LastName = "Amr";
-    String Address = "Shoubra";
-    String City = "Cairo";
-    String State = "Shoubra";
-    String ZipCode = "58458" ;
-    String PhoneNumber  ="01554863523";
-    String SSN = "29224";
-    static String UserName= "aamrfoou";
+   static Faker fake = new Faker();
+
+    String FirstName = fake.name().firstName();
+    String LastName = fake.name().lastName();
+    String Address = fake.address().firstName();
+    String City = fake.address().cityName();
+    String State = fake.address().state();
+    String ZipCode = fake.address().zipCode();
+    String PhoneNumber  =fake.phoneNumber().phoneNumber();
+    String SSN = fake.idNumber().validSvSeSsn();
+    static String UserName= fake.name().username();
     static String Password = "aamrfou55";
     String ConfirmPassword= "aamrfou55";
     String InvalidUserName = "aamrf";

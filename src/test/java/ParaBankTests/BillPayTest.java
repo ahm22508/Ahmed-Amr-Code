@@ -12,7 +12,7 @@ import java.sql.*;
 public class BillPayTest extends Base {
     @DataProvider(name = "SQL")
     public String[][] ReadFromDataBaseSQL() throws SQLException{
-        String Query = "Select * from login";
+        String Query = "Select * from login Limit 1 Offset 1";
         Connection Connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/datatesting", "root", "aamrfou55@55");
         Statement Statement = Connect.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet result = Statement.executeQuery(Query);
